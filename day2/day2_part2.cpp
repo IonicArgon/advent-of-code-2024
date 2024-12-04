@@ -58,7 +58,7 @@ int main()
         return b - a;
       });
       bool strictly_increasing_or_decreasing = std::ranges::all_of(differences, [](int i){ return i > 0; }) ||
-                                             std::ranges::all_of(differences, [](int i){ return i < 0; });
+                                               std::ranges::all_of(differences, [](int i){ return i < 0; });
       bool changes_within_range = std::ranges::all_of(differences, [](int i){ return std::abs(i) <= 3 && std::abs(i) >= 1; });
       if (strictly_increasing_or_decreasing && changes_within_range) {
         ++safe_reports;
